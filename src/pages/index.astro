@@ -1,0 +1,38 @@
+---
+const produits = [
+  { nom: "Montre Élégance", prix: "199 €", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop" },
+  { nom: "Casque Audio", prix: "299 €", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop" },
+  { nom: "Sac à Dos", prix: "89 €", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=400&auto=format&fit=crop" },
+];
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ma Boutique Moderne</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-sm p-4">
+      <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <span class="text-2xl font-bold text-indigo-600">Boutique.</span>
+        <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded-full text-sm">Panier</a>
+      </div>
+    </nav>
+    <header class="max-w-5xl mx-auto px-4 py-16 text-center">
+      <h1 class="text-5xl font-extrabold mb-4">Design Magnifique, <span class="text-indigo-600">Vitesse Éclair.</span></h1>
+      <p class="text-gray-500 text-xl">Bienvenue sur notre site JAMstack.</p>
+    </header>
+    <main class="max-w-5xl mx-auto px-4 pb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {produits.map((p) => (
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+          <img src={p.image} class="w-full h-48 object-cover rounded-xl mb-4" />
+          <h3 class="font-bold">{p.nom}</h3>
+          <p class="text-indigo-600 font-semibold">{p.prix}</p>
+          <button class="mt-4 w-full bg-gray-900 text-white py-2 rounded-lg">Voir</button>
+        </div>
+      ))}
+    </main>
+  </body>
+</html>
+
